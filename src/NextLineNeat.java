@@ -15,8 +15,9 @@ public class NextLineNeat {
     }
 
     public static File datei(String filePath) {
-        return new File("C:/Users/Djibr/OneDrive - BFW Berlin Brandenburg e" +
-                ".V/Dokumente/Fink2401Speicherdaten/IdeaProjects/11_November/HashMapsWordCount/src/bible2.txt");
+//        return new File("C:/Users/Djibr/OneDrive - BFW Berlin Brandenburg e" +
+//                ".V/Dokumente/Fink2401Speicherdaten/IdeaProjects/11_November/HashMapsWordCount/src/test.txt");
+        return new File(filePath);
     }
 
     public static void splitten(File datei) {
