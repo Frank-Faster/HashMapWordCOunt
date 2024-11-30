@@ -21,6 +21,11 @@ public class NextLineNeat {
     }
 
     public static void splitten(File datei) {
+        if (datei.exists()){
+            System.out.println("Datei gefunden: " + datei.getAbsolutePath());
+        } else {
+            System.out.println("Datei nicht gefunden. ");
+        }
         try (Scanner scanner = new Scanner(datei)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
