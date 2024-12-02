@@ -3,10 +3,10 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class NextLineNeat {
-    static SortedMap<Integer, ArrayList<String>> sortedWordArrList = new TreeMap<>(Comparator.reverseOrder());
-    static Map<String, Integer> wordMap = new TreeMap<>();
     static ArrayList<String> wordArrList = new ArrayList<>();
     static HashSet<String> wordHashSet = new HashSet<>();
+    static Map<String, Integer> wordMap = new TreeMap<>();
+    static SortedMap<Integer, ArrayList<String>> sortedWordArrList = new TreeMap<>(Comparator.reverseOrder());
 
     public static String eingabe() {
         Scanner scan = new Scanner(System.in);
@@ -15,9 +15,12 @@ public class NextLineNeat {
     }
 
     public static File datei(String filePath) {
-//        return new File("C:/Users/Djibr/OneDrive - BFW Berlin Brandenburg e" +
-//                ".V/Dokumente/Fink2401Speicherdaten/IdeaProjects/11_November/HashMapsWordCount/src/test.txt");
-        return new File(filePath);
+        if (filePath.isEmpty()) {
+            return new File("C:/Users/Administrator/OneDrive - BFW Berlin Brandenburg e" +
+                    ".V/Dokumente/Fink2401Speicherdaten/IdeaProjects/11_November/HashMapsWordCount/src/bible2.txt");
+        } else {
+            return new File(filePath);
+        }
     }
 
     public static void splitten(File datei) {
