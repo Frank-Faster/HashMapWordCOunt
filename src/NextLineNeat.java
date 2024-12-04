@@ -19,17 +19,21 @@ public class NextLineNeat {
 
     public static File datei(String filePath) {
         Scanner scan = new Scanner(System.in);
-        if (filePath.isEmpty()){
-        System.out.println("""
-                1 = Windows
-                2 = Linux
-                """);
-        int eingabe = scan.nextInt();
+        if (filePath.isEmpty()) {
+            System.out.println("""
+                    1 = Windows Maschine Schule
+                    2 = Windows Maschine Zuhause
+                    3 = Linux
+                    """);
+            int eingabe = scan.nextInt();
             switch (eingabe) {
                 case 1:
                     return new File("C:/Users/Administrator/OneDrive - BFW Berlin Brandenburg e" +
                             ".V/Dokumente/Fink2401Speicherdaten/IdeaProjects/11_November/HashMapsWordCount/src/bible2.txt");
                 case 2:
+                    return new File("C:/Users/Djibr/OneDrive - BFW Berlin Brandenburg e" +
+                            ".V/Dokumente/Fink2401Speicherdaten/IdeaProjects/11_November/HashMapsWordCount/src/bible2.txt");
+                case 3:
                     return new File("/home/django/Downloads/bible2.txt");
                 default:
                     return null;
@@ -92,8 +96,8 @@ public class NextLineNeat {
     public static void dateiErstellen() {
         try {
             if (!wordMap.isEmpty()) {
-//                FileWriter fileWriter = new FileWriter("C:/Users/Administrator/Desktop/testerstellt.txt");    // WINDOWS MASCHINE
-                FileWriter fileWriter = new FileWriter("/home/django/Schreibtisch/testerstellt.txt");   // LINUX LAPTOP
+                FileWriter fileWriter = new FileWriter("C:/Users/Administrator/Desktop/testerstellt.txt");    // WINDOWS MASCHINE
+//                FileWriter fileWriter = new FileWriter("/home/django/Schreibtisch/testerstellt.txt");   // LINUX LAPTOP
                 for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
                     int count = entry.getValue();
 //                    arrayList.add(String.valueOf(entry.getValue()));
@@ -103,7 +107,7 @@ public class NextLineNeat {
                 for (Map.Entry<Integer, ArrayList<String>> entry : sortedWordArrList.entrySet()) {
                     String key = String.valueOf(entry.getKey());
                     String value = String.valueOf(entry.getValue());
-                    fileWriter.write( key + value + " \n");
+                    fileWriter.write(key + value + " \n");
                 }
                 fileWriter.close();
                 System.out.println("Datei erstellt. ");
